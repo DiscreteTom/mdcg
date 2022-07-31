@@ -1,42 +1,52 @@
-import { lexer } from "./lexer";
-import { config } from "./arg";
+import { Lexer } from "marked";
+import { XMLParser } from "fast-xml-parser";
 import { readFileSync } from "fs";
+import { config } from "./arg";
 
 export function patch(content: string) {
-  return lexer
-    .lexAll(content)
+  return new Lexer()
+    .lex(content)
     .map((t) => {
-      if (t.type !== "mdcg") return t.content;
+      if (t.type != "html") return t.raw;
 
-      let s = t.content.slice(`[${config.token}](`.length); // remove prefix
-      s = s
-        .split("")
-        .filter((c) => c != "\r")
-        .join(""); // remove '\r'
-      s = s.endsWith("\n") ? s.slice(0, -2) : s.slice(0, -1); // remove suffix
+      let obj = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: "",
+      }).parse(t.raw);
 
-      let [path, query] = s.split("?", 2);
-      let params = {
+      if (!(config.tag in obj)) return t.raw;
+
+      const attr = obj[config.tag];
+
+      let options = {
         from: 0,
         to: undefined,
-        type: "code." + path.split(".").at(-1),
+        type: "code",
+        lang: "",
       };
-      query?.split("&").forEach((p) => {
-        let [key, value] = p.split("=");
-        if (key == "from") params.from = Number(value) - 1;
-        else if (key == "to") params.to = Number(value);
-        else if (key == "type") params.type = value;
-      });
 
-      let file_content = readFileSync(path, "utf-8")
+      if (!attr.path) throw new Error(`Missing path.`);
+      options.lang = attr.lang || attr.path.split(".").at(-1);
+      if (typeof attr.from == "string") {
+        options.from = Number(attr.from) - 1;
+      }
+      if (typeof attr.to == "string") {
+        options.to = Number(attr.to);
+      }
+      if (attr.type) options.type = attr.type;
+
+      const file_content = readFileSync(attr.path, "utf-8")
+        .split("")
+        .filter((c) => c != "\r")
+        .join("")
         .split("\n")
-        .slice(params.from, params.to)
+        .slice(options.from, options.to)
         .join("\n");
 
-      if (params.type.startsWith("code")) {
-        return `\`\`\`${params.type.split(".").at(1)}\n${file_content}\n\`\`\``;
+      if (options.type == "code") {
+        return `\`\`\`${options.lang}\n${file_content}\n\`\`\``;
       } else {
-        throw new Error(`Invalid type: ${params.type}`);
+        throw new Error(`Invalid type: ${options.type}`);
       }
     })
     .join("");
