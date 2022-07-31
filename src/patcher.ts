@@ -44,7 +44,7 @@ export function patch(content: string) {
         .join("\n");
 
       if (options.type == "code") {
-        return `\`\`\`${options.lang}\n${file_content}\n\`\`\``;
+        return `\`\`\`${options.lang}\n${file_content}\n\`\`\`\n\n`;
       } else {
         throw new Error(`Invalid type: ${options.type}`);
       }
