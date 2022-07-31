@@ -3,43 +3,43 @@
 
 
 "@types/argparse@^2.0.10":
-  version "2.0.10"
-  resolved "https://registry.npmmirror.com/@types/argparse/-/argparse-2.0.10.tgz#664e84808accd1987548d888b9d21b3e9c996a6c"
-  integrity sha512-C4wahC3gz3vQtvPazrJ5ONwmK1zSDllQboiWvpMM/iOswCYfBREFnjFbq/iWKIVOCl8+m5Pk6eva6/ZSsDuIGA==
+  "integrity" "sha512-C4wahC3gz3vQtvPazrJ5ONwmK1zSDllQboiWvpMM/iOswCYfBREFnjFbq/iWKIVOCl8+m5Pk6eva6/ZSsDuIGA=="
+  "resolved" "https://registry.npmmirror.com/@types/argparse/-/argparse-2.0.10.tgz"
+  "version" "2.0.10"
 
 "@types/marked@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.npmmirror.com/@types/marked/-/marked-4.0.3.tgz#2098f4a77adaba9ce881c9e0b6baf29116e5acc4"
-  integrity sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg==
+  "integrity" "sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg=="
+  "resolved" "https://registry.npmmirror.com/@types/marked/-/marked-4.0.3.tgz"
+  "version" "4.0.3"
 
 "@types/node@^18.6.3":
-  version "18.6.3"
-  resolved "https://registry.npmmirror.com/@types/node/-/node-18.6.3.tgz"
-  integrity sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==
+  "integrity" "sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg=="
+  "resolved" "https://registry.npmmirror.com/@types/node/-/node-18.6.3.tgz"
+  "version" "18.6.3"
 
-argparse@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz"
-  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
+"argparse@^2.0.1":
+  "integrity" "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
+  "resolved" "https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz"
+  "version" "2.0.1"
 
-fast-xml-parser@^4.0.9:
-  version "4.0.9"
-  resolved "https://registry.npmmirror.com/fast-xml-parser/-/fast-xml-parser-4.0.9.tgz#3a81dab7b4952b8d38f0136d28bd055b80ed6512"
-  integrity sha512-4G8EzDg2Nb1Qurs3f7BpFV4+jpMVsdgLVuG1Uv8O2OHJfVCg7gcA53obuKbmVqzd4Y7YXVBK05oJG7hzGIdyzg==
+"fast-xml-parser@^4.0.9":
+  "integrity" "sha512-4G8EzDg2Nb1Qurs3f7BpFV4+jpMVsdgLVuG1Uv8O2OHJfVCg7gcA53obuKbmVqzd4Y7YXVBK05oJG7hzGIdyzg=="
+  "resolved" "https://registry.npmmirror.com/fast-xml-parser/-/fast-xml-parser-4.0.9.tgz"
+  "version" "4.0.9"
   dependencies:
-    strnum "^1.0.5"
+    "strnum" "^1.0.5"
 
-marked@^4.0.18:
-  version "4.0.18"
-  resolved "https://registry.npmmirror.com/marked/-/marked-4.0.18.tgz#cd0ac54b2e5610cfb90e8fd46ccaa8292c9ed569"
-  integrity sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw==
+"marked@^4.0.18":
+  "integrity" "sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw=="
+  "resolved" "https://registry.npmmirror.com/marked/-/marked-4.0.18.tgz"
+  "version" "4.0.18"
 
-strnum@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmmirror.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
-  integrity sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==
+"strnum@^1.0.5":
+  "integrity" "sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA=="
+  "resolved" "https://registry.npmmirror.com/strnum/-/strnum-1.0.5.tgz"
+  "version" "1.0.5"
 
-typescript@^4.7.4:
-  version "4.7.4"
-  resolved "https://registry.npmmirror.com/typescript/-/typescript-4.7.4.tgz"
-  integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
+"typescript@^4.7.4":
+  "integrity" "sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ=="
+  "resolved" "https://registry.npmmirror.com/typescript/-/typescript-4.7.4.tgz"
+  "version" "4.7.4"

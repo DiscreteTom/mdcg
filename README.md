@@ -12,7 +12,9 @@ Use a special tag to specify the content. The default tag is `include`.
 <include path="./package.json" from="5" to="-1" type="code" lang="json" />
 ```
 
-Attributes:
+Then run `mdcg input.md output.md`.
+
+Available attributes:
 
 - `from`: from which line, can be negative, default: `1`, means the first line.
 - `to`: to which line, can be negative, default: `undefined`, means eof.
