@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { config } from "./arg";
 import { readFileSync, writeFileSync } from "fs";
 
