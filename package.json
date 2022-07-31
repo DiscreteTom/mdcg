@@ -1,0 +1,20 @@
+{
+  "name": "mdcg",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node out/index.js README.md"
+  },
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "axios": "^0.27.2",
+    "retsac": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/argparse": "^2.0.10",
+    "@types/node": "^18.6.3",
+    "typescript": "^4.7.4"
+  }
+}
