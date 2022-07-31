@@ -9,6 +9,10 @@ export function patch(content: string) {
       if (t.type !== "mdcg") return t.content;
 
       let s = t.content.slice(`[${config.token}](`.length); // remove prefix
+      s = s
+        .split("")
+        .filter((c) => c != "\r")
+        .join(""); // remove '\r'
       s = s.endsWith("\n") ? s.slice(0, -2) : s.slice(0, -1); // remove suffix
 
       let [path, query] = s.split("?", 2);
@@ -17,7 +21,7 @@ export function patch(content: string) {
         to: undefined,
         type: "code." + path.split(".").at(-1),
       };
-      query.split("&").forEach((p) => {
+      query?.split("&").forEach((p) => {
         let [key, value] = p.split("=");
         if (key == "from") params.from = Number(value) - 1;
         else if (key == "to") params.to = Number(value);

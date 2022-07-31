@@ -25,11 +25,16 @@ export const lexer = new Lexer.Builder()
         (content) =>
           !(
             in_code_block &&
-            content.split("").every((c) => c == "`") &&
-            content.length == code_block_quote_length
+            content
+              .split("")
+              .every((c) => c == "`" || c == "\n" || c == "\r") &&
+            content.split("").filter((c) => c == "`").length ==
+              code_block_quote_length
           )
       )
-      .then(() => (in_code_block = false)),
+      .then(() => {
+        in_code_block = false;
+      }),
     any_line: Lexer.from_to("", "\n", true),
   })
   .build();
