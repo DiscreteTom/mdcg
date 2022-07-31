@@ -1,8 +1,16 @@
 # MDCG
 
+[![npm](https://img.shields.io/npm/v/mdcg?color=green&style=flat-square)](https://www.npmjs.com/package/mdcg)
+
 Markdown Content Generator.
 
 Useful when you want to reference other file contents in your markdown content.
+
+## Installation
+
+```
+yarn add mdcg
+```
 
 ## Usage
 
