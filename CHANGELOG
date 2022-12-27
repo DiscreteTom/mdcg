@@ -2,6 +2,7 @@
 
 ## v0.1.2
 
+- Support nested XML tags.
 - Optimize code.
 
 ## v0.1.1
