@@ -9,8 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "tsc && node out/index.js README.md",
-    "test:debug": "node out/index.js README.md"
+    "test": "tsc && node out/index.js test.md",
+    "test:debug": "node out/index.js test.md"
   },
   "dependencies": {
     "argparse": "^2.0.1",
