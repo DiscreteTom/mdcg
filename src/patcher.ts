@@ -9,7 +9,7 @@ export function patch(content: string) {
     .map((t) => {
       if (t.type != "html") return t.raw;
 
-      let obj = new XMLParser({
+      const obj = new XMLParser({
         ignoreAttributes: false,
         attributeNamePrefix: "",
       }).parse(t.raw);
@@ -18,7 +18,7 @@ export function patch(content: string) {
 
       const attr = obj[config.tag];
 
-      let options = {
+      const options = {
         from: 0,
         to: undefined,
         type: "code",

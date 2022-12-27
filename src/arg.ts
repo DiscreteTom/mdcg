@@ -8,4 +8,4 @@ parser.add_argument("-t", "--tag", { default: "include", help: "Tag name." });
 parser.add_argument("input_file");
 parser.add_argument("output_file", { nargs: "?" });
 
-export let config = parser.parse_args();
+export const config = parser.parse_args();
