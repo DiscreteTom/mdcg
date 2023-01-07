@@ -34,3 +34,12 @@ And may include many `include` tags in one XML element:
 <include path="tsconfig.json" />
 <include path="tsconfig.json" />
 </details>
+
+## Attributes
+
+Attributes in XML should be kept, including boolean attributes.
+
+<details open class="some-class">
+<summary>Click to Expand</summary>
+<include path="tsconfig.json" />
+</details>

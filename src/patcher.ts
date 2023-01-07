@@ -4,12 +4,19 @@ import { readFileSync } from "fs";
 import { config } from "./arg";
 import * as jp from "jsonpath";
 
+const attributeNamePrefix = "@_";
+
 export function patch(content: string) {
   const parser = new XMLParser({
     ignoreAttributes: false,
-    attributeNamePrefix: "",
+    attributeNamePrefix,
+    allowBooleanAttributes: true,
   });
-  const builder = new XMLBuilder({ processEntities: false });
+  const builder = new XMLBuilder({
+    processEntities: false,
+    attributeNamePrefix,
+    ignoreAttributes: false,
+  });
 
   return new Lexer()
     .lex(content)
@@ -41,17 +48,24 @@ export function patch(content: string) {
               lang: "",
             };
 
-            if (!el.path) throw new Error(`Missing path.`);
-            options.lang = el.lang || el.path.split(".").at(-1);
-            if (typeof el.from == "string") {
-              options.from = Number(el.from) - 1;
+            if (!el[attributeNamePrefix + "path"])
+              throw new Error(`Missing path.`);
+            options.lang =
+              el[attributeNamePrefix + "lang"] ||
+              el[attributeNamePrefix + "path"].split(".").at(-1);
+            if (typeof el[attributeNamePrefix + "from"] == "string") {
+              options.from = Number(el[attributeNamePrefix + "from"]) - 1;
             }
-            if (typeof el.to == "string") {
-              options.to = Number(el.to);
+            if (typeof el[attributeNamePrefix + "to"] == "string") {
+              options.to = Number(el[attributeNamePrefix + "to"]);
             }
-            if (el.type) options.type = el.type;
+            if (el[attributeNamePrefix + "type"])
+              options.type = el[attributeNamePrefix + "type"];
 
-            const file_content = readFileSync(el.path, "utf-8")
+            const file_content = readFileSync(
+              el[attributeNamePrefix + "path"],
+              "utf-8"
+            )
               .split("")
               .filter((c) => c != "\r")
               .join("")

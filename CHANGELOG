@@ -1,8 +1,12 @@
 # CHANGELOG
 
+## v0.1.3
+
+- Support HTML attributes, including boolean attributes.
+
 ## v0.1.2
 
-- Support nested XML tags.
+- Support nested HTML tags.
 - Optimize code.
 
 ## v0.1.1
